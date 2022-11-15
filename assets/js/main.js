@@ -172,6 +172,7 @@ var app = new Vue({
         ],
         }
       ],
+      user: 0,
     },
     methods:{
       lastMessage: function (index){

@@ -8,6 +8,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #D7DBD6;
+    font-family: sans-serif;
 }
 
 .w100{
@@ -30,19 +31,21 @@ body {
     flex-wrap: wrap;
 }
 
-#leftBar{
-    width: 40%;
-}
-
-#rightBar{
-    width: 60%;
-}
-
 .flex-cc{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/* left column */
+
+#leftBar{
+    width: 40%;
+}    
+
+#rightBar{
+    width: 60%;
+}    
 
 .upperBar{
     background-color: #EAEAEA;
@@ -87,6 +90,11 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 25px;
+    position: relative;
+}
+
+.chatListElem:hover{
+    background-color: #E9EBEB;
 }
 
 .imgRounded{
@@ -101,8 +109,17 @@ body {
     overflow-y: hidden;
 }
 .contactInfo p{
-    margin-bottom: 10px;
+    margin-top: 5px;
     font-size: 13px;
+    opacity: 0.5;
+}
+
+#lastMessageDate{
+    font-size: 11px;
+    opacity: 0.5;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 /* right bar */
@@ -110,8 +127,9 @@ body {
     height: calc(100% - (50px + 50px));
     overflow-y: scroll;
     background-image: url(../img/mine.jpg);
-    display: flex;
-    justify-content: space-between;
+}
+#chatContainer ul{
+    position: relative;
 }
 
 .bottomBar{
@@ -138,7 +156,40 @@ body {
 }
 
 .chat{
-    width: 80%;
-    padding: 5px;
+    width: max-content;
+    max-width: 80%;
+    padding: 10px 10px 20px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
 }
 
+.receivedMsg{
+    background-color: #F3EEEA;
+}
+
+.sentMsg{
+    background-color: #D5F9BA;
+}
+
+.rightFlex{
+    justify-content: flex-end;
+}
+
+.rowChat{
+    display: flex;
+}
+
+#msgContent{
+    margin-right: 20px;
+    flex-basis: 85%;
+}
+
+#msgDate{
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    margin-left: 10px;
+    font-size: 13px;
+    flex-basis: 15%;
+}

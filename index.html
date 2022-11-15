@@ -27,14 +27,14 @@
             <!-- contacts/chat list -->
             <div id="chatList" class="w100">
                 <ul>
-                    <li class="chatListElem w100" v-for="(element, index) in contacts">
+                    <li class="chatListElem w100" v-for="(element, index) in contacts" @click="user = index">
                         <img class="imgRounded" v-bind:src="element.avatar" alt="">
                         <div class="contactInfo">
                             <h5>{{element.name}}</h5>
                             <p>{{element.messages[lastMessage(index)].message}}</p>
                         </div>
-                        <span>
-                            
+                        <span id="lastMessageDate">
+                            {{element.messages[lastMessage(index)].date.substr(11, 8)}}
                         </span>
                     </li>
                 </ul>
@@ -42,20 +42,37 @@
         </section>
         <!-- colonna destra -->
         <section id="rightBar">
+            <!-- friend profile -->
             <div class="upperBar w100">
 
             </div>
-            <div id="chatContainer">
-                
+            <!-- chat container -->
+            <div id="chatContainer" class="w100">
+                <ul>
+                    <li class="rowChat" v-for="(element) in contacts[user].messages" v-bind:class="element.status == 'sent' ? 'rightFlex' : ''">
+                        <div class="chat" v-bind:class="element.status == 'received' ? 'receivedMsg' : 'sentMsg'">
+                            <!-- message -->
+                            <div id="msgContent">
+                                {{element.message}}
+                            </div>
+                            <!-- date -->
+                            <div id="msgDate">
+                                {{element.date.substr(11, 8)}}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <!-- bottom text area -->
             <div class="bottomBar">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text">
+                <input type="text" placeholder="Scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </section>
     </main>
 
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
