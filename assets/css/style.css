@@ -70,7 +70,53 @@ body {
     overflow-y: scroll;
 }
 
+#leftBar .upperBar{
+    border-right: #cecdcd 1px solid;
+}
+
+#rightBar .upperBar{
+    border-left: #cecdcd 1px solid;
+}
+
+/* single element in the chat list */
 .chatListElem{
     height: 50px;
     width: 100%;
+}
+
+/* right bar */
+#chatContainer{
+    height: calc(100% - (50px + 50px));
+    overflow-y: scroll;
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomBar{
+    height: 50px;
+    background-color: #F3EEEA;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.bottomBar input{
+    width: 75%;
+    height: 60%;
+    border: #cecdcd 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.bottomBar i{
+    font-size: 22px;
+    opacity: 0.5;
+}
+
+.chat{
+    width: 80%;
+    padding: 5px;
 }
