@@ -27,7 +27,16 @@
             <!-- contacts/chat list -->
             <div id="chatList" class="w100">
                 <ul>
-                    <li></li>
+                    <li class="chatListElem w100" v-for="(element, index) in contacts">
+                        <img class="imgRounded" v-bind:src="element.avatar" alt="">
+                        <div class="contactInfo">
+                            <h5>{{element.name}}</h5>
+                            <p>{{element.messages[lastMessage(index)].message}}</p>
+                        </div>
+                        <span>
+                            
+                        </span>
+                    </li>
                 </ul>
             </div>
         </section>

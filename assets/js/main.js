@@ -1,11 +1,11 @@
 var app = new Vue({
-    el: '#app',
+    el: '#root',
     data: {
       contacts: [
         // first contact
         {
         name: 'Michele',
-        avatar: '_1',
+        avatar: './assets/img/avatar_1.jpg',
         visible: true,
         messages: [
         {
@@ -28,7 +28,7 @@ var app = new Vue({
         // second contact
         {
         name: 'Fabio',
-        avatar: '_2',
+        avatar: './assets/img/avatar_2.jpg',
         visible: true,
         messages: [
         {
@@ -51,7 +51,7 @@ var app = new Vue({
          // third contact
         {
         name: 'Samuele',
-        avatar: '_3',
+        avatar: './assets/img/avatar_3.jpg',
         visible: true,
         messages: [
         {
@@ -74,7 +74,7 @@ var app = new Vue({
         // fourth contact
         {
         name: 'Alessandro B.',
-        avatar: '_4',
+        avatar: './assets/img/avatar_4.jpg',
         visible: true,
         messages: [
         {
@@ -92,7 +92,7 @@ var app = new Vue({
         // fifth contact
         {
         name: 'Alessandro L.',
-        avatar: '_5',
+        avatar: './assets/img/avatar_5.jpg',
         visible: true,
         messages: [
         {
@@ -110,7 +110,7 @@ var app = new Vue({
         // sixth contact
         {
         name: 'Claudia',
-        avatar: '_6',
+        avatar: './assets/img/avatar_6.jpg',
         visible: true,
         messages: [
         {
@@ -133,7 +133,7 @@ var app = new Vue({
         // seventh contact
         {
         name: 'Federico',
-        avatar: '_7',
+        avatar: './assets/img/avatar_7.jpg',
         visible: true,
         messages: [
         {
@@ -151,7 +151,7 @@ var app = new Vue({
         // eighth contact
         {
         name: 'Davide',
-        avatar: '_8',
+        avatar: './assets/img/avatar_8.jpg',
         visible: true,
         messages: [
         {
@@ -171,6 +171,12 @@ var app = new Vue({
         }
         ],
         }
-      ]
+      ],
+    },
+    methods:{
+      lastMessage: function (index){
+       let x = this.contacts[index].messages.length - 1;
+       return x;
+      }
     }
 } )
