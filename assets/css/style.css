@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #D7DBD6;
+}
+
+.w100{
+    width: 100%;
+}
+
+#bgColored{
+   background-color: #009688;
+   height: 150px; 
+   position: fixed;
+   top: 0;
+   z-index: -1;
+}
+
+#root{
+    background-color: #F5F5F1;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#leftBar{
+    width: 40%;
+}
+
+#rightBar{
+    width: 60%;
+}
+
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upperBar{
+    background-color: #EAEAEA;
+    height: 50px;
+}
+
+#notifications{
+    background-color: #8EDAFC;
+    height: 60px;
+}
+
+#searchBar{
+    background-color: #EAEAEA ;
+    padding: 10px;
+}
+
+#searchBar input{
+    border: #cecdcd 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#chatList{
+    height:calc(100% - (50px + 47px + 60px) );
+    overflow-y: scroll;
+}
+
+.chatListElem{
+    height: 50px;
+    width: 100%;
+}
