@@ -14,11 +14,26 @@
     <main id="root">
         <!-- colonna sinistra -->
         <section id="leftBar">
-            <div class="upperBar w100">
-
+            <div class="upperBar w100 upperSettings">
+                <div class="flex-cc user">
+                    <img class="imgRounded" src="./assets/img/avatar_io.jpg" alt="userImg">               
+                    <h5>Sofia</h5>
+                </div>
+                <span class="flex-cc">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </span>
             </div>
             <!-- disable notifications -->
             <div id="notifications" class="w100">
+                <span id="bell" class="imgRounded flex-cc">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </span>
+                <div id="notificationButton">
+                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                    <a href="#" onsubmit="return false">Attiva notifiche desktop</a>
+                </div>
             </div>
             <!-- search bar -->
             <div id="searchBar" class="w100">
@@ -34,7 +49,7 @@
                             <p>{{element.messages[lastMessage(index)].message}}</p>
                         </div>
                         <span id="lastMessageDate">
-                            {{element.messages[lastMessage(index)].date.substr(11, 8)}}
+                            {{element.messages[lastMessage(index)].date.substr(11, 5)}}
                         </span>
                     </li>
                 </ul>
@@ -44,7 +59,22 @@
         <section id="rightBar">
             <!-- friend profile -->
             <div class="upperBar w100">
-
+                <div class="upperBar w100 upperSettings">
+                    <div class="flex-cc user">
+                        <img class="imgRounded" :src="contacts[user].avatar" alt="userImg">    
+                        <div>
+                            <h5>{{contacts[user].name}}</h5>
+                            <p>{{`Ultimo accesso oggi alle ` + contacts[user].messages[lastSeen(user)].date.substr(11, 5)}}</p>
+                        </div>           
+                        
+                    </div>
+                    <span class="flex-cc">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </span>
+                </div>
+    
             </div>
             <!-- chat container -->
             <div id="chatContainer" class="w100">
@@ -57,7 +87,7 @@
                             </div>
                             <!-- date -->
                             <div id="msgDate">
-                                {{element.date.substr(11, 8)}}
+                                {{element.date.substr(11, 5)}}
                             </div>
                         </div>
                     </li>

@@ -52,9 +52,47 @@ body {
     height: 50px;
 }
 
+.upperSettings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+}
+
+.upperSettings span{
+    gap: 15px;
+    margin-right: 6px;
+    opacity: 0.5;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+
+
 #notifications{
     background-color: #8EDAFC;
-    height: 60px;
+    height: 50px;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+#notificationButton a{
+    font-size: 13px;
+    color: black;
+    opacity: 0.7;
+}
+
+#bell{
+    color: #8EDAFC;
+    background-color: white;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
 }
 
 #searchBar{

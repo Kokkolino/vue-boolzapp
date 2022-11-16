@@ -178,6 +178,16 @@ var app = new Vue({
       lastMessage: function (index){
        let x = this.contacts[index].messages.length - 1;
        return x;
+      },
+      lastSeen: function (user) {
+        let x = 0;
+        let length = this.contacts[user].messages.length;
+        for (let i = 0; i < length; i++){
+          if(this.contacts[user].messages[i].status == 'received'){
+            x = i;
+          }
+        }
+        return x
       }
     }
 } )
