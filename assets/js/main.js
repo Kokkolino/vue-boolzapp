@@ -173,6 +173,7 @@ var app = new Vue({
         }
       ],
       user: 0,
+      writingMsg: '',
     },
     methods:{
       lastMessage: function (index){
@@ -188,6 +189,15 @@ var app = new Vue({
           }
         }
         return x
+      },
+      sendMsg: function (user){
+        const x = {
+          date: now(),
+          message: this.writingMsg,
+          status: 'sent'
+        };
+        this.contacts[user].messages.push(x);
+        return writingMsg = '';
       }
     }
 } )

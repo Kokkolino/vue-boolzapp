@@ -37,7 +37,10 @@
             </div>
             <!-- search bar -->
             <div id="searchBar" class="w100">
-                <input class="w100" type="text" placeholder="Cerca o inizia una nuova chat">
+                <div class="w100">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input  type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
             </div>
             <!-- contacts/chat list -->
             <div id="chatList" class="w100">
@@ -64,7 +67,7 @@
                         <img class="imgRounded" :src="contacts[user].avatar" alt="userImg">    
                         <div>
                             <h5>{{contacts[user].name}}</h5>
-                            <p>{{`Ultimo accesso oggi alle ` + contacts[user].messages[lastSeen(user)].date.substr(11, 5)}}</p>
+                            <p id="lastSeenMsg">{{`Ultimo accesso oggi alle ` + contacts[user].messages[lastSeen(user)].date.substr(11, 5)}}</p>
                         </div>           
                         
                     </div>
@@ -96,7 +99,7 @@
             <!-- bottom text area -->
             <div class="bottomBar">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" placeholder="Scrivi un messaggio" v-model="writingMsg" v-on:keyup.enter="sendMsg(user)">
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </section>
