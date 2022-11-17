@@ -174,6 +174,7 @@ var app = new Vue({
       ],
       user: 0,
       writingMsg: '',
+      dateTest: dayjs().date(),
     },
     methods:{
       lastMessage: function (index){
@@ -190,14 +191,42 @@ var app = new Vue({
         }
         return x
       },
+
       sendMsg: function (user){
+        // my msg
+        let day = dayjs().get('date');
+        let month = dayjs().get('month');
+        let year = dayjs().get('year');
+        let hour = dayjs().get('hour');
+        let second = dayjs().get('second');
+        let minute = dayjs().get('minute');
+        let y = `${day}/${month}/${year} ${hour}:${minute}:${second}`;
         const x = {
-          date: now(),
+          date: `${y}`,
           message: this.writingMsg,
           status: 'sent'
         };
         this.contacts[user].messages.push(x);
-        return writingMsg = '';
+        // his msg
+        setTimeout(() => {
+          day = dayjs().get('date');
+          month = dayjs().get('month');
+          year = dayjs().get('year');
+          hour = dayjs().get('hour');
+          second = dayjs().get('second');
+          minute = dayjs().get('minute');
+          y = `${day}/${month}/${year} ${hour}:${minute}:${second}`;
+
+          const xx = {
+            date: `${y}`,
+            message: "ok",
+            status: 'received'
+          };
+          this.contacts[user].messages.push(xx);
+
+        } ,3000)
+        this.writingMsg = "";
+        return
       }
     }
 } )

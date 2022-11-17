@@ -99,13 +99,12 @@
             <!-- bottom text area -->
             <div class="bottomBar">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio" v-model="writingMsg" v-on:keyup.enter="sendMsg(user)">
+                <input type="text" placeholder="Scrivi un messaggio" v-model="writingMsg" v-on:keyup.enter="sendMsg(user)" ref="chatInput">
                 <i class="fa-solid fa-microphone"></i>
             </div>
         </section>
     </main>
-
-    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
