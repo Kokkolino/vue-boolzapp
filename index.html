@@ -39,13 +39,13 @@
             <div id="searchBar" class="w100">
                 <div class="w100">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input  type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input  type="text" placeholder="Cerca o inizia una nuova chat" v-model="filter" v-on:keyup.enter="filtered(filter)">
                 </div>
             </div>
             <!-- contacts/chat list -->
             <div id="chatList" class="w100">
                 <ul>
-                    <li class="chatListElem w100" v-for="(element, index) in contacts" @click="user = index">
+                    <li class="chatListElem w100" v-for="(element, index) in contacts" @click="user = index" v-show="element.name.toLowerCase().includes(filter.toLowerCase())">
                         <img class="imgRounded" v-bind:src="element.avatar" alt="">
                         <div class="contactInfo">
                             <h5>{{element.name}}</h5>

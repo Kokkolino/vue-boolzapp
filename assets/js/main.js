@@ -174,13 +174,15 @@ var app = new Vue({
       ],
       user: 0,
       writingMsg: '',
-      dateTest: dayjs().date(),
+      filterArr: [],
+      filter: "",
     },
     methods:{
       lastMessage: function (index){
        let x = this.contacts[index].messages.length - 1;
        return x;
       },
+
       lastSeen: function (user) {
         let x = 0;
         let length = this.contacts[user].messages.length;
@@ -228,5 +230,5 @@ var app = new Vue({
         this.writingMsg = "";
         return
       }
-    }
-} )
+  } 
+})
