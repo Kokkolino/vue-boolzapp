@@ -229,6 +229,20 @@ var app = new Vue({
         } ,3000)
         this.writingMsg = "";
         return
+      },
+      
+      toggleBtn: function(id){
+        var x = document.getElementById(`btn${id}`);
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } 
+        else {
+          x.style.display = "none";
+        }
+      },
+      
+      deleteMsg: function (msgIndex, userIndex){
+        return this.contacts[userIndex].messages.splice(msgIndex, 1);
       }
   } 
 })
